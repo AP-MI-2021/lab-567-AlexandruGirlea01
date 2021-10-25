@@ -7,12 +7,8 @@ def creeaza_cheltuiala(numar, suma, data, tip):
     :param tip: string
     :return:
     """
-    return {
-        "numar": numar,
-        "suma": suma,
-        "data": data,
-        "tip": tip
-    }
+    cheltuiala = (numar, suma, data, tip)
+    return cheltuiala
 
 
 def get_numar(cheltuiala):
@@ -21,7 +17,7 @@ def get_numar(cheltuiala):
     :param cheltuiala: Dictionar ce retine o cheltuiala
     :return: Numarul apartamentului cheltuielii
     """
-    return cheltuiala["numar"]
+    return cheltuiala[0]
 
 
 def get_suma(cheltuiala):
@@ -30,7 +26,7 @@ def get_suma(cheltuiala):
     :param cheltuiala: Dictionar ce retine o cheltuiala
     :return: Suma cheltuielii
     """
-    return cheltuiala["suma"]
+    return cheltuiala[1]
 
 
 def get_data(cheltuiala):
@@ -39,7 +35,7 @@ def get_data(cheltuiala):
     :param cheltuiala: Dictionar ce retine o cheltuiala
     :return: Data cheltuielii
     """
-    return cheltuiala["data"]
+    return cheltuiala[2]
 
 
 def get_tip(cheltuiala):
@@ -48,7 +44,7 @@ def get_tip(cheltuiala):
     :param cheltuiala: Dictionar ce retine o cheltuiala
     :return: Tipul cheltuielii
     """
-    return cheltuiala["tip"]
+    return cheltuiala[3]
 
 
 def to_string(cheltuiala):
