@@ -22,12 +22,3 @@ def adunare_valoare_by_data(data, valoare, lista):
         else:
             lista_noua.append(cheltuiala)
     return lista_noua
-
-
-def maxim_cheltuieli_by_tip(tip, lista):
-    """
-    Determina cea mai mare cheltuiala pentru fiecare tip
-    :param tip: string
-    :param lista: list
-    :return: Cea mai mare cheltuiala pentru fiecare tip
-    """
