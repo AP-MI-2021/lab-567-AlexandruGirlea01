@@ -9,6 +9,8 @@ def adunare_valoare_by_data(data, valoare, lista):
     :param lista: list
     :return: Lista cheltuielilor in urma procesarii
     """
+    if valoare < 0:
+        raise ValueError("Valoarea trebuie sa fie pozitiva")
     lista_noua = []
     for cheltuiala in lista:
         if get_data(cheltuiala) == data:
