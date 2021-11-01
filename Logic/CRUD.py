@@ -53,7 +53,7 @@ def sterge_cheltuiala(id, lista):
     """
     if get_by_id(id, lista) is None:
         raise ValueError("Nu exista cheltuiala cu ID-ul dat!")
-    return [cheltuiala for cheltuiala in lista if get_numar(cheltuiala) != id]
+    return [cheltuiala for cheltuiala in lista if get_id(cheltuiala) != id]
 
 
 def modifica_cheltuiala(id, numar, suma, data, tip, lista):

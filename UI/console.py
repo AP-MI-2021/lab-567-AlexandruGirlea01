@@ -28,6 +28,7 @@ def ui_adauga_cheltuiala(lista):
 
 
 def ui_sterge_cheltuiala(lista):
+
     numar = int(input("Introduceti numarul apartamentului: "))
     return sterge_cheltuiala(numar, lista)
 
@@ -79,6 +80,7 @@ def ui_sterge_cheltuiala_by_numar(lista):
     except ValueError as ve:
         print("Eroare: {}".format(ve))
         return lista
+
 
 def afiseaza(lista):
     for cheltuiala in lista:
