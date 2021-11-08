@@ -1,4 +1,4 @@
-from Domain.cheltuieli import creeaza_cheltuiala, get_numar, get_id, get_suma
+from Domain.cheltuieli import creeaza_cheltuiala, get_numar, get_id, get_suma, get_tip
 
 
 def adauga_cheltuiala(id, numar, suma, data, tip, lista):
@@ -21,6 +21,8 @@ def adauga_cheltuiala(id, numar, suma, data, tip, lista):
         raise ValueError("Numarul apartamentului nu poate fi negativ")
     if get_suma(cheltuiala) < 0:
         raise ValueError("Suma cheltuielii nu poate fi negativa")
+    if get_tip(cheltuiala) not in ["intretinere", "canal", "alte cheltuieli"]:
+        raise ValueError("Tipul introdus nu este corect")
     return lista + [cheltuiala]
 
 

@@ -55,3 +55,46 @@ def sterge_cheltuiala_by_numar(numar, lista):
     :return: Lista de cheltuieli ramase in urma stergerii
     """
     return [cheltuiala for cheltuiala in lista if get_numar(cheltuiala) != numar]
+
+
+def ordonare_desc_by_suma(lista):
+    """
+    Ordoneaza descrescator dupa sume o lista de cheltuieli
+    :param lista: list
+    :return: Lista ordonata descrescator dupa cheltuieli
+    """
+    sume = []
+    for cheltuiala in lista:
+        sume.append(get_suma(cheltuiala))
+    sume.sort(reverse=True)
+    lista_ordonata = []
+    for suma in sume:
+        for cheltuiala in lista:
+            if suma == get_suma(cheltuiala):
+                lista_ordonata.append(cheltuiala)
+                break
+    return lista_ordonata
+
+
+def get_luna(cheltuiala):
+    data = get_data(cheltuiala)
+    data_split = data.split(".")
+    luna = data_split[1]
+    return luna
+
+
+def afisare_sume_lunare(lista, luna):
+    """
+    Afiseaza sumele platite de fiecare apartament intr-o luna data
+    :param lista: Lista de cheltuieli
+    :param luna: Luna pentru care se cere afisarea
+    :return: Dictionar ce contine numarul apartamentului si cheltuielile din luna data
+    """
+    rezultat = {}
+    for cheltuiala in lista:
+        nr_apartament = get_numar(cheltuiala)
+        if luna == get_luna(cheltuiala) and nr_apartament in rezultat:
+            rezultat[nr_apartament] += get_suma(cheltuiala)
+        elif luna == get_luna(cheltuiala):
+            rezultat[nr_apartament] = get_suma(cheltuiala)
+    return rezultat
