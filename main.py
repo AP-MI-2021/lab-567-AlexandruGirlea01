@@ -1,3 +1,4 @@
+
 from Tests.testAll import apeleaza_toate_testele
 from UI.console import run_ui
 
